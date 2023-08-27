@@ -81,10 +81,17 @@
         border-radius: 8px;
         object-fit: cover;
       }
+      .dark {
+        background: rgb(30, 36, 30);
+      }
+      .dark .container {
+        background: rgb(44, 53, 44);
+        color: rgb(232, 231, 229);
+      }
     </style>
   </head>
-  <body class="dark">
-    <button class="theme-button">Dark Theme</button>
+  <body>
+    <button class="theme-button">Change Theme</button>
     <div class="container">
       <h1>Reading</h1>
       <h2>My favorite hobby</h2>
@@ -128,5 +135,18 @@
         >Nardelys Caraballo</a
       >
     </footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
   </body>
 </html>
